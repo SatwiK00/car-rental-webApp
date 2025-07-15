@@ -117,7 +117,7 @@ export const dummyCarData = [
     {
         "_id": "67ff5bc069c03d4e45f30b77",
         "owner": "67fe3467ed8a8fe17d0ba6e2",
-        "brand": "BMW",
+        "brand": "BMW ",
         "model": "X5",
         "image": car_image1,
         "year": 2006,
@@ -134,8 +134,8 @@ export const dummyCarData = [
     {
         "_id": "67ff6b758f1b3684286a2a65",
         "owner": "67fe3467ed8a8fe17d0ba6e2",
-        "brand": "Toyota",
-        "model": "Corolla",
+        "brand": "BMW ",
+        "model": "M2",
         "image": car_image2,
         "year": 2021,
         "category": "Sedan",
@@ -151,8 +151,8 @@ export const dummyCarData = [
     {
         "_id": "67ff6b9f8f1b3684286a2a68",
         "owner": "67fe3467ed8a8fe17d0ba6e2",
-        "brand": "Jeep ",
-        "model": "Wrangler",
+        "brand": "Tesla ",
+        "model": "Model 3",
         "image": car_image3,
         "year": 2023,
         "category": "SUV",
@@ -168,8 +168,8 @@ export const dummyCarData = [
     {
         "_id": "68009c93a3f5fc6338ea7e34",
         "owner": "67fe3467ed8a8fe17d0ba6e2",
-        "brand": "Ford",
-        "model": "Neo 6",
+        "brand": "Chevrolet ",
+        "model": "Camaro",
         "image": car_image4,
         "year": 2022,
         "category": "Sedan",
