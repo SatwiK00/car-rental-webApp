@@ -10,7 +10,7 @@ const CarCard = ({ car }) => {
     <div  onClick={()=>{
       navigate(`/car-details/${car._id}`);scrollTo(0,0) 
     }}
-    className="group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer">
+    className="group h-[370px] rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer">
       <div className="relative h-48 overflow-hidden">
         <img
           src={car.image}
@@ -26,10 +26,11 @@ const CarCard = ({ car }) => {
 
         <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur-sm text-white px-3 py-2 rounded-lg">
             <span className="font-semibold">{currency}{car.pricePerDay}</span> 
-            <span className="text-sm text-white/80">/ day</span>
+            <span className="text-sm text-white/80">/day</span>
         </div>
-        <div>
-        <div className="p-4 sm:p-5">
+      </div>
+      <div>
+        <div className="p-4 sm:p-5 ">
             <div className="flex justify-between items-start mb-2">
                 <div>
                     <h3 className="text-lg font-medium">{car.brand} {car.model}</h3>
@@ -57,7 +58,6 @@ const CarCard = ({ car }) => {
                     <span>{car.location} </span>
                 </div>
             </div>
-        </div>
         </div>
       </div>
     </div>

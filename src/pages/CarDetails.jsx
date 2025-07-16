@@ -70,9 +70,9 @@ const CarDetails = () => {
         </div>
         {/*Right: Booking Form*/}
         <form onSubmit={handleSubmit} className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
-          <p className='flex items-center  text-3xl text-gray-800 font-semibold '>
-            {currency}{car.pricePerDay}<div className=' text-sm text-gray-400 font-normal'>/ day</div>
-          </p>
+          <span className='flex items-center  text-3xl text-gray-800 font-semibold '>
+            {currency}{car.pricePerDay}<div className=' text-sm text-gray-400 font-normal'>/day</div>
+          </span>
 
           <hr  className='border-borderColor my-6'/>
 
