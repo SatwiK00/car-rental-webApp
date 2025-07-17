@@ -121,6 +121,39 @@ export const ownerMenuLinks = [
     { name: "Manage Bookings", path: "/owner/manage-bookings", icon: listIcon, coloredIcon: listIconColored },
 ]
 
+export const dummyUserData = {
+  "_id": "6847f7cab3d8daecdb517095",
+  "name": "GreatStack",
+  "email": "admin@example.com",
+  "role": "owner",
+  "image": user_profile,
+}
+
+export const dummyUserData2 = {
+  "_id": "8a3e9c5fe2d4aaf1cd6721c4",
+  "name": "TechNova",
+  "email": "nova@example.com",
+  "role": "admin",
+  "image": user_profile,
+};
+
+export const dummyUserData3 = {
+  "_id": "b2a1d7f6a4e0c3df7623499a",
+  "name": "CodeWizard",
+  "email": "wizard@example.com",
+  "role": "editor",
+  "image": user_profile,
+};
+
+export const dummyUserData4 = {
+  "_id": "da5f2e8cb4b98a72dd410edf",
+  "name": "PixelSmith",
+  "email": "pixel@example.com",
+  "role": "viewer",
+  "image": user_profile,
+};
+
+
 export const dummyCarData = [
     {
       _id: "67ff5bc069c03d4e45f30b77",
