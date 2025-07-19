@@ -71,6 +71,60 @@ const AddCar = () => {
             </select>
           </div>
         </div>
+
+        {/*CarTransmission,Fuel Type Seating Capacity */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+        <div className='flex flex-col w-full'>
+            <label>Transmission </label>
+            <select onChange={e=>setCar({...car,transmission:e.target.value})} value={car.transmission} className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none '>
+              <option value="">Select a transmission</option>
+              <option value="automatic">Automatic</option>
+              <option value="manual">Manual</option>
+              <option value="semi-automatic">Semi-automatic</option>    
+            </select>
+          </div>
+
+          <div className='flex flex-col w-full'>
+            <label>Fuel Type </label>
+            <select onChange={e=>setCar({...car,fuel_type:e.target.value})} value={car.fuel_type} className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none '>
+              <option value="">Select a fuel type</option>
+              <option value="Gas">Gas</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Electric">Electric</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
+          </div>
+
+          <div className='flex flex-col w-full'>
+            <label>Seating Capacity</label>
+            <input type="number" placeholder='4'  required className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' value={car.seating_capacity} onChange={e=>setCar({...car,seating_capacity:e.target.value})}/>  
+          </div>
+        </div>
+
+        {/*Car location */}
+        <div className='flex flex-col w-full'>
+          <label>Location</label>
+              <select onChange={e=>setCar({...car,location:e.target.value})} value={car.location} className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none '>
+                <option value="">Select a location</option>
+                <option value="New York">New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Huston">Huston</option>
+              </select>
+        </div>
+        {/*Car description */}
+        <div className='flex flex-col w-full'>
+            <label>Description</label>
+            <textarea  placeholder='eg.A luxurious SUV with a spacious interior and a powerful engine'  required className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' value={car.description} onChange={e=>setCar({...car,description:e.target.value})}></textarea>  
+          </div>
+        
+        <button className='flex items-center gap-2 px-4 py-2.5 mt-4 bg-primary text-white rounded-md font-medium w-max cursor-pointer'>
+          <img src={assets.tick_icon} alt="" />
+          List Your Car
+        </button>
+
+
       </form>
     </div>
   )
