@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import {assets, dummyUserData, ownerMenuLinks } from '../../assets/assets'
+import { useAppContext } from '../../context/AppContext'
 
 const Sidebar = () => {
     const user = dummyUserData
     const location = useLocation() 
     const [image,setImage] = useState('')
+    const { logout } = useAppContext()
 
     const updateImage  = async ()=>{
         user.image = URL.createObjectURL(image)
@@ -38,6 +40,15 @@ const Sidebar = () => {
                     <div className={`${link.path === location.pathname && 'bg-primary'} w-1.5 h-8 rounded-l right-0 absolute` }></div>
                 </NavLink>
             ))}
+            
+            {/* Logout Button */}
+            <button 
+                onClick={logout}
+                className='relative flex items-center gap-2 w-full py-3 pl-4 text-gray-600 hover:bg-red-50 hover:text-red-600 transition-all'
+            >
+                <img src={assets.logout_icon || assets.close_icon} alt="logout" />
+                <span className='max-md:hidden'>Logout</span>
+            </button>
         </div>
     </div>
   )
