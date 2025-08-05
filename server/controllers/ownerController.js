@@ -71,10 +71,10 @@ export const toggleCarAvailability = async(req,res)=>{
     try{
         const {_id} = req.user;
         const {carId} = req.body
-        const car = await Car.findById({owner:_id}) 
+        const car = await Car.findById(carId) 
         
         //checking if car belongs to the user
-        if(car.owner.toString()!=_id.toString()){
+        if(!car || car.owner.toString()!=_id.toString()){
             return res.json({success:false,message:"Unauthorized"})
         }
 
@@ -92,10 +92,10 @@ export const deleteCar = async(req,res)=>{
     try{
         const {_id} = req.user;
         const {carId} = req.body
-        const car = await Car.findById({owner:_id}) 
+        const car = await Car.findById(carId) 
         
         //checking if car belongs to the user
-        if(car.owner.toString()!=_id.toString()){
+        if(!car || car.owner.toString()!=_id.toString()){
             return res.json({success:false,message:"Unauthorized"})
         }
 
@@ -136,8 +136,10 @@ export const getDashboardData = async (req,res)=>{
             monthlyRevenue
         }
 
+        res.json({success:true,dashboardData})
+
     }catch(error){
-        console.log(error.messsage)
+        console.log(error.message)
         res.json({success:false,message:error.message})
     }
 }
