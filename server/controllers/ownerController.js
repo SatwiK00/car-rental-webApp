@@ -99,10 +99,25 @@ export const deleteCar = async(req,res)=>{
             return res.json({success:false,message:"Unauthorized"})
         }
 
-        car.owner = null;
-        car.isAvailable = false;
-        await car.save()
-        res.json({success:true,message:"Car removed"})
+        // Check if there are any active bookings for this car
+        const activeBookings = await Booking.find({
+            car: carId,
+            status: { $in: ['pending', 'confirmed'] }
+        })
+
+        if(activeBookings.length > 0) {
+            return res.json({
+                success: false, 
+                message: "Cannot delete car with active bookings. Please cancel all bookings first."
+            })
+        }
+
+        // Delete related bookings (cancelled or completed ones)
+        await Booking.deleteMany({ car: carId })
+        
+        // Actually delete the car from the database
+        await Car.findByIdAndDelete(carId)
+        res.json({success:true,message:"Car deleted successfully"})
     }catch(error){
         console.log(error.message)
         res.json({success:false,message:error.message})
